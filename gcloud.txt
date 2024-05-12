@@ -1,9 +1,0 @@
-gcloud functions deploy copyFile \
-  --runtime python39 \
-  --trigger-resource SOURCE_BUCKET_NAME \
-  --trigger-event google.storage.object.finalize \
-  --set-env-vars DEST_BUCKET_NAME=DEST_BUCKET_NAME,SERVICE_ACCOUNT_KEY_PATH=/path/to/your/service-account-key.json \
-  --entry-point copy_file \
-  --service-account SERVICE_ACCOUNT_EMAIL \
-  --source /path/to/your/function/code \
-  -- --source_bucket_name SOURCE_BUCKET_NAME --dest_bucket_name DEST_BUCKET_NAME
